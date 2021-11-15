@@ -1,64 +1,106 @@
-import React from "react";
-import styled from "styled-components/native";
-import {StyleSheet, Image, Text, View} from 'react-native';
+import React from 'react';
+import styled from 'styled-components/native';
+import { Image } from 'react-native';
 
-const Div = styled.View`
-  width: 150px;
-  height: 150px;
-  flex-direction: row;
-  justify-content: center;
+const ImgBox = styled.View`
+  background-color: ${props => props.color};
+  width: 200px;
+  height: 200px;
+  justify-content:center;
+  align-items:center;
 `;
 
-const Img = styled.View`
-  width: 150px;
-  height: 150px;
-`;
-
-const imgLarge = styled.View`
-  width: 150px;
-  height: 150px;
+const ImgLarge = styled.View`
+  background-color: ${props => props.color};
+  width: 400px;
+  height: 200px;
+  justify-content:center;
+  align-items:center;
 `;
 
 const Pagina = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-itens: center;
-  background-color: blank;
+  background-image: linear-gradient(#000000  60%,  #193fea);
+  align-items:center;
+  flex:1;
+`;
+
+const Header = styled.View`
+  flex-direction: row;
+  height:500px;
+  flex-wrap:wrap;
+  justify-content:center;
 `;
 
 const Texto = styled.Text`
-  color: Black;
-  font-size: 20px;
+  font-family: Lato;
+  color: white;
+`;
+
+const Espaco = styled.View`
+  width: 51px;
+  height: 10px;
 `;
 
 
-
-export default function App() {
+function App() {
   return (
     <Pagina>
+      <Texto>Galeria de imagens de Matheus A. Furtado</Texto>
+      <Texto>Tema: Portifólio de Mídia Digital</Texto>
 
-      <Texto>Galeria de</Texto>
-      <Texto>Matheus A. Furtado</Texto>
-      <Texto>Tema: Portifólio de mídias digitais</Texto>
+      <Espaco/>
 
-      <Div>
-        <Img>
-        <Image source={require('./src/img/apple.png')}
-        style={{width: 350, height: 300, backgroundColor:'#AAA'}}
-        resizeMode='stretch'/>
-        </Img>
-      </Div>
+      <Header>
 
+        <Espaco/>
+
+        <ImgBox>
+          <Image source = {require('./assets/test2.png')}
+            style = {{ width: 280, height: 180, backgroundColor: '#AAA' }}
+            resizeMode="cover"
+          />
+        </ImgBox>
+
+        <Espaco/>
+
+        <ImgBox>
+          <Image source = {require('./assets/chao.gif')}
+            style = {{ width: 180, height: 180, backgroundColor: '#AAA' }}
+            resizeMode='cover'
+          />
+        </ImgBox>
+
+        <Espaco/>
+
+        <ImgBox>
+          <Image source = {{uri:'https://i.ibb.co/zfzgwTL/3dlayer.gif'}}
+            style = {{ width: 200, height: 180, backgroundColor: '#AAA' }}
+            resizeMode='strech'
+          />
+        </ImgBox>
+
+        <Espaco/>
+
+        <ImgBox>
+          <Image source = {{uri:'https://i.ibb.co/3rbkR0V/ney.gif'}}
+            style = {{ width: 280, height: 180, backgroundColor: '#AAA' }}
+            resizeMode='cover'
+          />
+        </ImgBox>
+        
+        <Espaco/>
+
+        <ImgLarge>
+          <Image source = {{uri:'https://i.ibb.co/7GPJRdh/sofa.png'}}
+            style = {{ width: 380, height: 180, backgroundColor: '#AAA' }}
+            resizeMode='cover'
+          />
+        </ImgLarge>
+
+
+      </Header>
     </Pagina>
-
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
