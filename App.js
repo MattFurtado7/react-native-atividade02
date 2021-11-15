@@ -1,13 +1,56 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import styled from "styled-components/native";
+import {StyleSheet, Image, Text, View} from 'react-native';
+
+const Div = styled.View`
+  width: 150px;
+  height: 150px;
+  flex-direction: row;
+  justify-content: center;
+`;
+
+const Img = styled.View`
+  width: 150px;
+  height: 150px;
+`;
+
+const imgLarge = styled.View`
+  width: 150px;
+  height: 150px;
+`;
+
+const Pagina = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-itens: center;
+  background-color: blank;
+`;
+
+const Texto = styled.Text`
+  color: Black;
+  font-size: 20px;
+`;
+
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Pagina>
+
+      <Texto>Galeria de</Texto>
+      <Texto>Matheus A. Furtado</Texto>
+      <Texto>Tema: Portifólio de mídias digitais</Texto>
+
+      <Div>
+        <Img>
+        <Image source={require('./src/img/apple.png')}
+        style={{width: 350, height: 300, backgroundColor:'#AAA'}}
+        resizeMode='stretch'/>
+        </Img>
+      </Div>
+
+    </Pagina>
+
   );
 }
 
